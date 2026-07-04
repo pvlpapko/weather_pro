@@ -19,7 +19,7 @@
         android:focusable="true"
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_weight="1.08"
+        android:layout_weight="1.00"
         android:gravity="center_vertical"
         android:orientation="vertical"
         android:paddingRight="5dp">
@@ -83,7 +83,7 @@
         android:focusable="true"
         android:layout_width="0dp"
         android:layout_height="match_parent"
-        android:layout_weight="0.92"
+        android:layout_weight="1.00"
         android:gravity="center_vertical|right"
         android:orientation="vertical"
         android:paddingLeft="5dp">
@@ -133,8 +133,8 @@
             android:orientation="horizontal">
             <ImageView
                 android:id="@+id/widgetWeatherImage"
-                android:layout_width="46dp"
-                android:layout_height="46dp"
+                android:layout_width="72dp"
+                android:layout_height="72dp"
                 android:adjustViewBounds="true"
                 android:contentDescription="@string/app_name"
                 android:scaleType="fitCenter"
@@ -144,7 +144,7 @@
                 android:id="@+id/widgetTemp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="5dp"
+                android:layout_marginLeft="3dp"
                 android:gravity="right|center_vertical"
                 android:includeFontPadding="false"
                 android:shadowColor="#99000000"

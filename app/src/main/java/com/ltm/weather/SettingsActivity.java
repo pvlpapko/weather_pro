@@ -326,7 +326,7 @@ public class SettingsActivity extends Activity {
         float weatherMul = Math.max(0.80f, Math.min(2.00f, weatherScale / 100f));
         if (widgetPreviewIcon != null) {
             widgetPreviewIcon.setTextColor(widgetPreviewTextColor());
-            widgetPreviewIcon.setTextSize(Math.max(18, Math.min(46, Math.round(24 * weatherMul))));
+            widgetPreviewIcon.setTextSize(Math.max(28, Math.min(68, Math.round(38 * weatherMul))));
         }
         if (widgetPreviewTemp != null) {
             widgetPreviewTemp.setTextColor(widgetPreviewTextColor());

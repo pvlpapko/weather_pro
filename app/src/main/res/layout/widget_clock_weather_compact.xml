@@ -116,7 +116,7 @@
                     android:shadowRadius="3"
                     android:text="☁"
                     android:textColor="#F8FAFC"
-                    android:textSize="17sp" />
+                    android:textSize="30sp" />
 
                 <TextView
                     android:id="@+id/widgetTemp"
@@ -128,7 +128,7 @@
                     android:autoSizeTextType="uniform"
                     android:gravity="right"
                     android:includeFontPadding="false"
-                    android:layout_marginLeft="3dp"
+                    android:layout_marginLeft="2dp"
                     android:maxLines="1"
                     android:shadowColor="#99000000"
                     android:shadowDx="0"

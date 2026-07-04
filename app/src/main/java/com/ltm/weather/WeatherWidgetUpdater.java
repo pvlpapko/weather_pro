@@ -429,7 +429,7 @@ public final class WeatherWidgetUpdater {
         float factor = Math.min(widthBoost, heightBoost) * safe;
 
         int clockSize = clamp(Math.round(64 * clockUser * factor), tiny ? 26 : 40, 112);
-        int iconSize = clamp(Math.round(34 * weatherUser * factor), tiny ? 18 : 24, low ? 48 : 62);
+        int iconSize = clamp(Math.round(52 * weatherUser * factor), tiny ? 36 : 50, low ? 74 : 92);
         int tempSize = clamp(Math.round(32 * weatherUser * factor), tiny ? 20 : 26, low ? 52 : 66);
         int smallSize = clamp(Math.round(10 * factor), 8, 13);
 
@@ -437,6 +437,7 @@ public final class WeatherWidgetUpdater {
         views.setTextViewTextSize(R.id.centerClockDate, TypedValue.COMPLEX_UNIT_SP, smallSize);
         views.setTextViewTextSize(R.id.centerTemp, TypedValue.COMPLEX_UNIT_SP, tempSize);
         views.setTextViewTextSize(R.id.centerDayNight, TypedValue.COMPLEX_UNIT_SP, smallSize);
+        applyImageViewSizeDp(views, R.id.centerWeatherImage, iconSize);
 
         int padH = clamp(Math.round(width / 42f), 4, 12);
         int padV = clamp(Math.round(height / 42f), 2, 6);
@@ -479,7 +480,7 @@ public final class WeatherWidgetUpdater {
             int conditionSize = clamp(Math.round(11 * weatherBase), 8, 13);
             int dayNightSize = clamp(Math.round(10 * weatherBase), 8, 12);
             int tempSize = clamp(Math.round((compact ? 34 : detailed ? 46 : 44) * weatherBase * weatherUser), tiny ? 22 : 34, low ? 68 : 86);
-            int iconSize = clamp(Math.round((compact ? 23 : detailed ? 35 : 32) * weatherBase * weatherUser), tiny ? 16 : 24, low ? 50 : 64);
+            int iconSize = clamp(Math.round((compact ? 40 : detailed ? 56 : 50) * weatherBase * weatherUser), tiny ? 34 : 50, low ? 72 : 96);
 
             views.setTextViewTextSize(R.id.widgetClockTime, TypedValue.COMPLEX_UNIT_SP, timeSize);
             views.setTextViewTextSize(R.id.widgetClockDate, TypedValue.COMPLEX_UNIT_SP, clamp(Math.round(11 * safe), 8, 13));
@@ -489,6 +490,7 @@ public final class WeatherWidgetUpdater {
             views.setTextViewTextSize(R.id.widgetEffect, TypedValue.COMPLEX_UNIT_SP, clamp(conditionSize - 1, 8, 12));
             views.setTextViewTextSize(R.id.widgetCondition, TypedValue.COMPLEX_UNIT_SP, conditionSize);
             views.setTextViewTextSize(R.id.widgetUpdated, TypedValue.COMPLEX_UNIT_SP, dayNightSize);
+            applyImageViewSizeDp(views, R.id.widgetWeatherImage, iconSize);
 
             int padH = clamp(Math.round(width / 46f), 4, 11);
             int padV = clamp(Math.round(height / 38f), 2, 6);
@@ -638,6 +640,13 @@ public final class WeatherWidgetUpdater {
                     || manager.getAppWidgetIds(new ComponentName(context, ForecastWidgetProvider.class)).length > 0;
         } catch (Exception ignored) {
             return false;
+        }
+    }
+
+    private static void applyImageViewSizeDp(RemoteViews views, int viewId, int sizeDp) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            views.setViewLayoutWidth(viewId, sizeDp, TypedValue.COMPLEX_UNIT_DIP);
+            views.setViewLayoutHeight(viewId, sizeDp, TypedValue.COMPLEX_UNIT_DIP);
         }
     }
 

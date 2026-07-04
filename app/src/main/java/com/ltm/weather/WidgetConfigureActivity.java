@@ -302,7 +302,7 @@ public class WidgetConfigureActivity extends Activity {
         if (previewCity != null) previewCity.setTextColor(widgetSubTextColor());
         if (previewIcon != null) {
             previewIcon.setTextColor(widgetTextColor());
-            previewIcon.setTextSize(Math.max(20, Math.min(54, Math.round(28 * previewWeatherScale()))));
+            previewIcon.setTextSize(Math.max(30, Math.min(72, Math.round(40 * previewWeatherScale()))));
         }
         if (previewTemp != null) {
             previewTemp.setTextColor(widgetTextColor());

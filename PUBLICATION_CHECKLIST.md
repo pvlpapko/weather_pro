@@ -3,8 +3,8 @@
 ## Версия
 
 - `applicationId`: `com.ltm.weather`
-- `versionCode`: `26`
-- `versionName`: `2.3.21`
+- `versionCode`: `27`
+- `versionName`: `2.3.22`
 
 ## Что готово
 
@@ -15,7 +15,7 @@
 - README обновлён.
 - Политика конфиденциальности обновлена.
 - fastlane metadata обновлены.
-- fastlane changelog для `versionCode 26` добавлен.
+- fastlane changelog для `versionCode 27` добавлен.
 - Общий `CHANGELOG.md` добавлен.
 
 ## Перед публикацией в магазин
