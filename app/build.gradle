@@ -1,0 +1,55 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace 'com.ltm.weather'
+    compileSdk 35
+
+    defaultConfig {
+        applicationId 'com.ltm.weather'
+        minSdk 26
+        targetSdk 35
+        versionCode 24
+        versionName '2.3.19'
+    }
+
+    def devKeystoreFile = file('dev-update-key.jks')
+    def keystorePathEnv = System.getenv('WEATHER_KEYSTORE_PATH') ?: System.getenv('LTM_KEYSTORE_PATH')
+    def keystorePasswordEnv = System.getenv('WEATHER_KEYSTORE_PASSWORD') ?: System.getenv('LTM_KEYSTORE_PASSWORD')
+    def keyAliasEnv = System.getenv('WEATHER_KEY_ALIAS') ?: System.getenv('LTM_KEY_ALIAS')
+    def keyPasswordEnv = System.getenv('WEATHER_KEY_PASSWORD') ?: System.getenv('LTM_KEY_PASSWORD')
+    def hasReleaseKeystore = keystorePathEnv != null && keystorePathEnv.trim() && file(keystorePathEnv).exists()
+    def activeKeystoreFile = hasReleaseKeystore ? file(keystorePathEnv) : devKeystoreFile
+    def activeStorePassword = hasReleaseKeystore ? keystorePasswordEnv : 'weatherpro123'
+    def activeKeyAlias = hasReleaseKeystore ? keyAliasEnv : 'weather-pro-dev'
+    def activeKeyPassword = hasReleaseKeystore ? keyPasswordEnv : 'weatherpro123'
+
+    signingConfigs {
+        updateCompatible {
+            storeFile = activeKeystoreFile
+            storePassword = activeStorePassword
+            keyAlias = activeKeyAlias
+            keyPassword = activeKeyPassword
+        }
+    }
+
+    buildTypes {
+        debug {
+            signingConfig signingConfigs.updateCompatible
+            versionNameSuffix '-debug'
+        }
+
+        release {
+            minifyEnabled false
+            shrinkResources false
+            signingConfig signingConfigs.updateCompatible
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}

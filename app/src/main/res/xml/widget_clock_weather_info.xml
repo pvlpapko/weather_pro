@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
+    android:description="@string/app_name"
+    android:configure="com.ltm.weather.WidgetConfigureActivity"
+    android:initialLayout="@layout/widget_clock_weather"
+    android:minWidth="250dp"
+    android:minHeight="92dp"
+    android:minResizeWidth="120dp"
+    android:minResizeHeight="92dp"
+    android:previewImage="@drawable/widget_preview_clock_weather"
+    android:previewLayout="@layout/widget_preview_clock_weather"
+    android:resizeMode="horizontal"
+    android:targetCellWidth="5"
+    android:targetCellHeight="2"
+    android:updatePeriodMillis="1800000"
+    android:widgetCategory="home_screen" />

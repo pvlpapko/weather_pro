@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Weather Pro</string>
+    <string name="widget_clock_label">Clock + weather</string>
+    <string name="widget_hourly_label">Hourly weather</string>
+    <string name="widget_forecast_label">3-day forecast</string>
+    <string name="widget_alarm_hint">alarm / timer</string>
+    <string name="widget_center_label">Centered clock + weather</string>
+</resources>

@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Weather Pro</string>
+    <string name="widget_clock_label">時計 + 天気</string>
+    <string name="widget_hourly_label">時間ごとの天気</string>
+    <string name="widget_forecast_label">3日予報</string>
+    <string name="widget_alarm_hint">アラーム / タイマー</string>
+    <string name="widget_center_label">中央時計 + 天気</string>
+</resources>

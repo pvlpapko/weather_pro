@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/previewHourlyRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_widget_preview_real"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:baselineAligned="false"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text="По часам"
+            android:textColor="#F8FAFC"
+            android:textSize="13sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:text="⚙"
+            android:textColor="#E2E8F0"
+            android:textSize="10sp" />
+    </LinearLayout>
+
+    <TextView android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:ellipsize="end" android:gravity="center_vertical" android:maxLines="1" android:singleLine="true" android:text="13:00  ☁  13°  дождь 73%" android:textColor="#F8FAFC" android:textSize="12sp" />
+    <TextView android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:ellipsize="end" android:gravity="center_vertical" android:maxLines="1" android:singleLine="true" android:text="14:00  ☁  14°  дождь 73%" android:textColor="#F8FAFC" android:textSize="12sp" />
+    <TextView android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:ellipsize="end" android:gravity="center_vertical" android:maxLines="1" android:singleLine="true" android:text="15:00  ☁  14°  дождь 73%" android:textColor="#F8FAFC" android:textSize="12sp" />
+    <TextView android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:ellipsize="end" android:gravity="center_vertical" android:maxLines="1" android:singleLine="true" android:text="16:00  ☁  15°  дождь 57%" android:textColor="#F8FAFC" android:textSize="12sp" />
+</LinearLayout>

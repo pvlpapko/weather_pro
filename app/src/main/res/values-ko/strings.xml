@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Weather Pro</string>
+    <string name="widget_clock_label">시계 + 날씨</string>
+    <string name="widget_hourly_label">시간별 날씨</string>
+    <string name="widget_forecast_label">3일 예보</string>
+    <string name="widget_alarm_hint">알람 / 타이머</string>
+    <string name="widget_center_label">중앙 시계 + 날씨</string>
+</resources>
