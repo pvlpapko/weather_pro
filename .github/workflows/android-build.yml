@@ -1,0 +1,71 @@
+name: Build Weather Pro Android
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main, master ]
+
+jobs:
+  build:
+    name: Build APK and AAB
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Set up Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Set up Gradle
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.9'
+
+      - name: Prepare release signing key
+        shell: bash
+        run: |
+          set -e
+          if [ -n "${{ secrets.WEATHER_KEYSTORE_BASE64 }}" ]; then
+            echo "Using WEATHER_* GitHub Secrets keystore"
+            echo "${{ secrets.WEATHER_KEYSTORE_BASE64 }}" | base64 --decode > "$GITHUB_WORKSPACE/app/weather-release.jks"
+            echo "WEATHER_KEYSTORE_PATH=$GITHUB_WORKSPACE/app/weather-release.jks" >> "$GITHUB_ENV"
+            echo "WEATHER_KEYSTORE_PASSWORD=${{ secrets.WEATHER_KEYSTORE_PASSWORD }}" >> "$GITHUB_ENV"
+            echo "WEATHER_KEY_ALIAS=${{ secrets.WEATHER_KEY_ALIAS }}" >> "$GITHUB_ENV"
+            echo "WEATHER_KEY_PASSWORD=${{ secrets.WEATHER_KEY_PASSWORD }}" >> "$GITHUB_ENV"
+          elif [ -n "${{ secrets.LTM_KEYSTORE_BASE64 }}" ]; then
+            echo "Using legacy LTM_* GitHub Secrets keystore"
+            echo "${{ secrets.LTM_KEYSTORE_BASE64 }}" | base64 --decode > "$GITHUB_WORKSPACE/app/weather-release.jks"
+            echo "LTM_KEYSTORE_PATH=$GITHUB_WORKSPACE/app/weather-release.jks" >> "$GITHUB_ENV"
+            echo "LTM_KEYSTORE_PASSWORD=${{ secrets.LTM_KEYSTORE_PASSWORD }}" >> "$GITHUB_ENV"
+            echo "LTM_KEY_ALIAS=${{ secrets.LTM_KEY_ALIAS }}" >> "$GITHUB_ENV"
+            echo "LTM_KEY_PASSWORD=${{ secrets.LTM_KEY_PASSWORD }}" >> "$GITHUB_ENV"
+          else
+            echo "No GitHub Secrets keystore found."
+            echo "Using stable repository key: app/dev-update-key.jks"
+            echo "This is intentional for test builds so APK updates can install over previous APKs from this repository."
+          fi
+
+      - name: Build Debug APK
+        run: gradle assembleDebug --no-daemon
+
+      - name: Build signed Release APK
+        run: gradle assembleRelease --no-daemon
+
+      - name: Build signed Release AAB
+        run: gradle bundleRelease --no-daemon
+
+      - name: Upload builds
+        uses: actions/upload-artifact@v4
+        with:
+          name: Weather-Pro-builds
+          path: |
+            app/build/outputs/apk/debug/*.apk
+            app/build/outputs/apk/release/*.apk
+            app/build/outputs/bundle/release/*.aab
