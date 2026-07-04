@@ -6,8 +6,8 @@
 
 Текущая версия:
 
-- `versionCode 24`
-- `versionName 2.3.19`
+- `versionCode 26`
+- `versionName 2.3.21`
 
 ## Главное правило
 

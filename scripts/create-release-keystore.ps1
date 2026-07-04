@@ -22,7 +22,7 @@ keytool -genkeypair `
   -keyalg RSA `
   -keysize 2048 `
   -validity 10000 `
-  -dname "CN=Weather Pro, OU=LTM_Fedory, O=LTM_Fedory, L=Local, S=Local, C=BY"
+  -dname "CN=Weather Widget Pro, OU=LTM_Fedory, O=LTM_Fedory, L=Local, S=Local, C=BY"
 
 Write-Host "Keystore created: $keystorePath"
 Write-Host "Use these variables for local release builds:"

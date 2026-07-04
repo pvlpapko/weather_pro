@@ -2,14 +2,13 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 
-if [[ -z "${WEATHER_KEYSTORE_PATH:-}" || -z "${WEATHER_KEYSTORE_PASSWORD:-}" || -z "${WEATHER_KEY_ALIAS:-}" || -z "${WEATHER_KEY_PASSWORD:-}" ]]; then
+if [[ -z "${WEATHER_KEYSTORE_PATH:-}" && -z "${LTM_KEYSTORE_PATH:-}" ]]; then
   echo "Release signing variables are not set."
-  echo "Set: WEATHER_KEYSTORE_PATH, WEATHER_KEYSTORE_PASSWORD, WEATHER_KEY_ALIAS, WEATHER_KEY_PASSWORD"
-  echo "Or run scripts/create-release-keystore.sh first."
-  exit 1
+  echo "Using stable repository key: app/dev-update-key.jks"
+  echo "For store publication, set WEATHER_* GitHub Secrets or local WEATHER_* variables with your permanent release/upload key."
 fi
 
-echo "Building signed Weather Pro Release APK and AAB..."
+echo "Building signed Weather Widget Pro Release APK and AAB..."
 gradle assembleRelease bundleRelease --no-daemon
 
 echo "Done:"

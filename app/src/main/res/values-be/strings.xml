@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Надвор\'е Pro</string>
+    <string name="app_name">Weather Widget Pro</string>
     <string name="widget_clock_label">Гадзіннік + надворʼе</string>
     <string name="widget_hourly_label">Надвор\'е па гадзінах</string>
     <string name="widget_forecast_label">Прагноз на 3 дні</string>

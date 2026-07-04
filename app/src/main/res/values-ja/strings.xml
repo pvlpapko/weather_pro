@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Weather Pro</string>
+    <string name="app_name">Weather Widget Pro</string>
     <string name="widget_clock_label">時計 + 天気</string>
     <string name="widget_hourly_label">時間ごとの天気</string>
     <string name="widget_forecast_label">3日予報</string>

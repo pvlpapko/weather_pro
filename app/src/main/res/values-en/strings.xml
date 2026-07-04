@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Weather Pro</string>
+    <string name="app_name">Weather Widget Pro</string>
     <string name="widget_clock_label">Clock + weather</string>
     <string name="widget_hourly_label">Hourly weather</string>
     <string name="widget_forecast_label">3-day forecast</string>

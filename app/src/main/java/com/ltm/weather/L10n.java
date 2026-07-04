@@ -66,7 +66,7 @@ public final class L10n {
     public static String t(String language, String key) {
         String l = normalizeLanguage(language);
         switch (key) {
-            case "app_title": return pick(l, "Погода Pro", "Надвор'е Pro", "Weather Pro", "Weather Pro", "Weather Pro", "Weather Pro", "Weather Pro");
+            case "app_title": return pick(l, "Weather Widget Pro", "Weather Widget Pro", "Weather Widget Pro", "Weather Widget Pro", "Weather Widget Pro", "Weather Widget Pro", "Weather Widget Pro");
             case "settings": return pick(l, "Настройки", "Налады", "Settings", "设置", "設定", "설정", "Cài đặt");
             case "back": return pick(l, "Назад", "Назад", "Back", "返回", "戻る", "뒤로", "Quay lại");
             case "language": return pick(l, "Язык", "Мова", "Language", "语言", "言語", "언어", "Ngôn ngữ");
@@ -166,13 +166,13 @@ public final class L10n {
             case "forecast": return pick(l, "Прогноз", "Прагноз", "Forecast", "预报", "予報", "예보", "Dự báo");
             case "selected_forecast": return pick(l, "Прогноз: ", "Прагноз: ", "Forecast: ", "预报：", "予報: ", "예보: ", "Dự báo: ");
             case "rain_map_toast": return pick(l, "Карта осадков: RainViewer + OpenStreetMap", "Карта ападкаў: RainViewer + OpenStreetMap", "Precipitation map: RainViewer + OpenStreetMap", "降水地图：RainViewer + OpenStreetMap", "降水マップ: RainViewer + OpenStreetMap", "강수 지도: RainViewer + OpenStreetMap", "Bản đồ mưa: RainViewer + OpenStreetMap");
-            case "radar_title": return pick(l, "Погода Pro · карта осадков", "Надвор'е Pro · карта ападкаў", "Weather Pro · precipitation map", "Weather Pro · 降水地图", "Weather Pro · 降水マップ", "Weather Pro · 강수 지도", "Weather Pro · bản đồ mưa");
+            case "radar_title": return pick(l, "Weather Widget Pro · карта осадков", "Weather Widget Pro · карта ападкаў", "Weather Widget Pro · precipitation map", "Weather Widget Pro · 降水地图", "Weather Widget Pro · 降水マップ", "Weather Widget Pro · 강수 지도", "Weather Widget Pro · bản đồ mưa");
             case "radar_sub": return pick(l, "читаемая карта, свайп, масштаб и анимация осадков.", "радар RainViewer: свайп, пінч-маштаб і прагноз па часе.", "Readable map, pan, zoom, and precipitation animation.", "RainViewer 雷达：拖动、双指缩放和时间预报。", "RainViewer レーダー: 移動、ピンチズーム、時系列予測。", "RainViewer 레이더: 이동, 핀치 줌, 시간 예보.", "Radar RainViewer: kéo bản đồ, chụm phóng to và dự báo theo thời gian.");
             case "radar_loading": return pick(l, "Загружаю радар осадков...", "Загружаю радар ападкаў...", "Loading precipitation radar...", "正在加载降水雷达...", "降水レーダーを読み込み中...", "강수 레이더 로딩 중...", "Đang tải radar mưa...");
             case "radar_no_frames": return pick(l, "Радарные кадры не найдены", "Радарныя кадры не знойдзены", "No radar frames found", "未找到雷达帧", "レーダーフレームがありません", "레이더 프레임 없음", "Không có khung radar");
             case "radar_ready": return pick(l, "Радар обновлён", "Радар абноўлены", "Radar updated", "雷达已更新", "レーダー更新済み", "레이더 업데이트됨", "Radar đã cập nhật");
             case "radar_error": return pick(l, "Не удалось загрузить слой осадков", "Не ўдалося загрузіць слой ападкаў", "Could not load precipitation layer", "无法加载降水图层", "降水レイヤーを読み込めません", "강수 레이어를 불러오지 못했습니다", "Không tải được lớp mưa");
-            case "rain_alert_channel": return pick(l, "Погода Pro · дождь", "Надвор'е Pro · дождж", "Weather Pro · rain", "Weather Pro · 降雨", "Weather Pro · 雨", "Weather Pro · 비", "Weather Pro · mưa");
+            case "rain_alert_channel": return pick(l, "Weather Widget Pro · дождь", "Weather Widget Pro · дождж", "Weather Widget Pro · rain", "Weather Widget Pro · 降雨", "Weather Widget Pro · 雨", "Weather Widget Pro · 비", "Weather Widget Pro · mưa");
             case "rain_alert_channel_desc": return pick(l, "Уведомления о вероятности дождя", "Апавяшчэнні пра верагоднасць дажджу", "Rain probability alerts", "降雨概率提醒", "雨の確率通知", "강수 확률 알림", "Cảnh báo khả năng mưa");
             case "rain_possible": return pick(l, "Возможен дождь: ", "Магчымы дождж: ", "Rain possible: ", "可能降雨：", "雨の可能性: ", "비 가능성: ", "Có thể mưa: ");
             case "probability": return pick(l, "вероятность", "верагоднасць", "probability", "概率", "確率", "확률", "khả năng");

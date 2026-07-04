@@ -23,11 +23,13 @@
         android:gravity="center"
         android:orientation="vertical">
 
-        <TextView
+        <TextClock
             android:id="@+id/centerClockTime"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ellipsize="none"
+            android:format12Hour="h:mm"
+            android:format24Hour="HH:mm"
             android:fontFamily="sans-serif-condensed"
             android:gravity="center"
             android:includeFontPadding="false"
@@ -37,16 +39,17 @@
             android:shadowDy="1"
             android:shadowRadius="3"
             android:singleLine="true"
-            android:text="13:07"
             android:textColor="#F8FAFC"
             android:textSize="64sp"
             android:textStyle="bold" />
 
-        <TextView
+        <TextClock
             android:id="@+id/centerClockDate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ellipsize="end"
+            android:format12Hour="EEE, d MMM"
+            android:format24Hour="EEE, d MMM"
             android:gravity="center"
             android:includeFontPadding="false"
             android:maxLines="1"
@@ -55,7 +58,6 @@
             android:shadowDx="0"
             android:shadowDy="1"
             android:shadowRadius="2"
-            android:text="вс, 14 июн"
             android:textColor="#E2E8F0"
             android:textSize="10sp" />
     </LinearLayout>
@@ -74,7 +76,7 @@
             android:id="@+id/centerWeatherImage"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="0.55"
+            android:layout_weight="0.78"
             android:adjustViewBounds="true"
             android:contentDescription="@string/app_name"
             android:scaleType="fitCenter"
@@ -86,7 +88,7 @@
         android:focusable="true"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight="1.45"
+            android:layout_weight="1.22"
             android:gravity="center_vertical"
             android:orientation="vertical"
             android:paddingLeft="4dp">
@@ -128,15 +130,13 @@
 
         <TextView
             android:id="@+id/centerWidgetSettings"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="32dp"
+            android:layout_height="30dp"
             android:layout_marginLeft="4dp"
             android:gravity="center"
             android:includeFontPadding="false"
-            android:paddingLeft="3dp"
-            android:paddingRight="3dp"
             android:text="⚙"
             android:textColor="#E2E8F0"
-            android:textSize="11sp" />
+            android:textSize="16sp" />
     </LinearLayout>
 </LinearLayout>

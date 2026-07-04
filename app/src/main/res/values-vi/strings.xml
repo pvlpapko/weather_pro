@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Weather Pro</string>
+    <string name="app_name">Weather Widget Pro</string>
     <string name="widget_clock_label">Đồng hồ + thời tiết</string>
     <string name="widget_hourly_label">Thời tiết theo giờ</string>
     <string name="widget_forecast_label">Dự báo 3 ngày</string>

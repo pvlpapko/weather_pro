@@ -12,7 +12,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.AlarmClock;
 import android.provider.Settings;
-import android.text.format.DateFormat;
 import android.util.TypedValue;
 import android.view.View;
 import android.widget.RemoteViews;
@@ -141,8 +140,6 @@ public final class WeatherWidgetUpdater {
             applyBackground(context, v, R.id.widgetRootClock);
             applyClockTextColors(context, v);
             applyMode(context, v, true, options);
-            v.setTextViewText(R.id.widgetClockTime, currentTime(context));
-            v.setTextViewText(R.id.widgetClockDate, currentDate(context));
             v.setTextViewText(R.id.widgetCity, formatWidgetLocation(cache.city));
             v.setImageViewResource(R.id.widgetWeatherImage, weatherImageResource(cache));
             v.setTextViewText(R.id.widgetEffect, weatherEffectLine(condition));
@@ -168,15 +165,13 @@ public final class WeatherWidgetUpdater {
             applyBackground(context, v, R.id.centerWidgetRoot);
             int main = WeatherRepository.isWidgetDark(context) ? 0xFFF8FAFC : 0xFF0F172A;
             int sub = WeatherRepository.isWidgetDark(context) ? 0xFFE2E8F0 : 0xFF334155;
-                        v.setTextColor(R.id.centerClockTime, main);
+            v.setTextColor(R.id.centerClockTime, main);
             v.setTextColor(R.id.centerClockDate, sub);
             v.setTextColor(R.id.centerTemp, main);
             v.setTextColor(R.id.centerDayNight, sub);
             v.setTextColor(R.id.centerWidgetSettings, sub);
             applyCenterWidgetSizing(context, v, options);
             v.setImageViewResource(R.id.centerWeatherImage, weatherImageResource(cache));
-            v.setTextViewText(R.id.centerClockTime, currentTime(context));
-            v.setTextViewText(R.id.centerClockDate, currentDate(context));
             v.setTextViewText(R.id.centerTemp, cache.temp);
             v.setTextViewText(R.id.centerDayNight, compactDayNight(context, cache.todayDayNight));
             v.setOnClickPendingIntent(R.id.centerClockArea, openClockIntent(context));
@@ -372,21 +367,6 @@ public final class WeatherWidgetUpdater {
     private static boolean isFog(String c) { return c.contains("туман") || c.contains("дым") || c.contains("fog") || c.contains("雾") || c.contains("霧") || c.contains("안개") || c.contains("sương") || c.contains("🌫"); }
     private static boolean isCloud(String c) { return c.contains("облач") || c.contains("воблач") || c.contains("пасмур") || c.contains("пахмур") || c.contains("cloud") || c.contains("overcast") || c.contains("云") || c.contains("曇") || c.contains("구름") || c.contains("mây") || c.contains("☁"); }
 
-    private static String currentTime(Context context) {
-        Calendar calendar = Calendar.getInstance();
-        boolean is24 = DateFormat.is24HourFormat(context);
-        return String.format(Locale.getDefault(), is24 ? "%02d:%02d" : "%d:%02d", is24 ? calendar.get(Calendar.HOUR_OF_DAY) : clock12(calendar), calendar.get(Calendar.MINUTE));
-    }
-
-    private static int clock12(Calendar calendar) {
-        int hour = calendar.get(Calendar.HOUR);
-        return hour == 0 ? 12 : hour;
-    }
-
-    private static String currentDate(Context context) {
-        return new java.text.SimpleDateFormat("EEE, d MMM", L10n.locale(context)).format(new java.util.Date());
-    }
-
     private static String weatherSymbol(String condition) {
         if (condition == null) return isNightNow() ? "☾" : "☀";
         String c = condition.toLowerCase(Locale.getDefault());
@@ -411,7 +391,7 @@ public final class WeatherWidgetUpdater {
         views.setTextColor(R.id.widgetClockHint, sub);
         views.setTextColor(R.id.widgetCity, sub);
         views.setTextColor(R.id.widgetSettingsButton, sub);
-                views.setTextColor(R.id.widgetEffect, sub);
+        views.setTextColor(R.id.widgetEffect, sub);
         views.setTextColor(R.id.widgetTemp, main);
         views.setTextColor(R.id.widgetCondition, main);
         views.setTextColor(R.id.widgetUpdated, sub);
@@ -455,7 +435,7 @@ public final class WeatherWidgetUpdater {
 
         views.setTextViewTextSize(R.id.centerClockTime, TypedValue.COMPLEX_UNIT_SP, clockSize);
         views.setTextViewTextSize(R.id.centerClockDate, TypedValue.COMPLEX_UNIT_SP, smallSize);
-                views.setTextViewTextSize(R.id.centerTemp, TypedValue.COMPLEX_UNIT_SP, tempSize);
+        views.setTextViewTextSize(R.id.centerTemp, TypedValue.COMPLEX_UNIT_SP, tempSize);
         views.setTextViewTextSize(R.id.centerDayNight, TypedValue.COMPLEX_UNIT_SP, smallSize);
 
         int padH = clamp(Math.round(width / 42f), 4, 12);

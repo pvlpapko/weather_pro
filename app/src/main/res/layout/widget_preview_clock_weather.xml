@@ -67,7 +67,7 @@
             android:includeFontPadding="false"
             android:maxLines="1"
             android:singleLine="true"
-            android:text="Федоровский  *"
+            android:text="Федоровский   ⚙"
             android:textColor="#E2E8F0"
             android:textSize="10sp" />
 
@@ -79,8 +79,8 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:layout_width="32dp"
-                android:layout_height="32dp"
+                android:layout_width="46dp"
+                android:layout_height="46dp"
                 android:adjustViewBounds="true"
                 android:contentDescription="@string/app_name"
                 android:scaleType="fitCenter"

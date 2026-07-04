@@ -14,5 +14,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = 'Weather Pro'
+rootProject.name = 'Weather Widget Pro'
 include ':app'

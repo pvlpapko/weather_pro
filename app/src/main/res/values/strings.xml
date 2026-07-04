@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Погода Pro</string>
+    <string name="app_name">Weather Widget Pro</string>
     <string name="widget_clock_label">Часы + погода</string>
     <string name="widget_hourly_label">Погода по часам</string>
     <string name="widget_forecast_label">Прогноз на 3 дня</string>
