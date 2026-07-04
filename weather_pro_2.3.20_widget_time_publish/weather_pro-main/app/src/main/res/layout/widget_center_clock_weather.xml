@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/centerWidgetRoot"
+        android:clickable="true"
+        android:focusable="true"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_widget_initial_dark"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingLeft="10dp"
+    android:paddingTop="4dp"
+    android:paddingRight="10dp"
+    android:paddingBottom="4dp">
+
+    <LinearLayout
+        android:id="@+id/centerClockArea"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.15"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextClock
+            android:id="@+id/centerClockTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="none"
+            android:format12Hour="h:mm"
+            android:format24Hour="HH:mm"
+            android:fontFamily="sans-serif-condensed"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:maxLines="1"
+            android:shadowColor="#99000000"
+            android:shadowDx="0"
+            android:shadowDy="1"
+            android:shadowRadius="3"
+            android:singleLine="true"
+            android:textColor="#F8FAFC"
+            android:textSize="64sp"
+            android:textStyle="bold" />
+
+        <TextClock
+            android:id="@+id/centerClockDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:format12Hour="EEE, d MMM"
+            android:format24Hour="EEE, d MMM"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:shadowColor="#99000000"
+            android:shadowDx="0"
+            android:shadowDy="1"
+            android:shadowRadius="2"
+            android:textColor="#E2E8F0"
+            android:textSize="10sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/centerWeatherArea"
+        android:clickable="true"
+        android:focusable="true"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.62"
+        android:baselineAligned="false"
+        android:gravity="center"
+        android:orientation="horizontal">
+        <ImageView
+            android:id="@+id/centerWeatherImage"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.78"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/app_name"
+            android:scaleType="fitCenter"
+            android:src="@drawable/weather_real_partly" />
+
+        <LinearLayout
+            android:id="@+id/centerTempArea"
+        android:clickable="true"
+        android:focusable="true"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.22"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:paddingLeft="4dp">
+
+            <TextView
+                android:id="@+id/centerTemp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:shadowColor="#99000000"
+                android:shadowDx="0"
+                android:shadowDy="1"
+                android:shadowRadius="3"
+                android:text="19°"
+                android:textColor="#F8FAFC"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/centerDayNight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:shadowColor="#99000000"
+                android:shadowDx="0"
+                android:shadowDy="1"
+                android:shadowRadius="2"
+                android:text="Д:20° · Н:10°"
+                android:textColor="#E2E8F0"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/centerWidgetSettings"
+            android:layout_width="32dp"
+            android:layout_height="30dp"
+            android:layout_marginLeft="4dp"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="⚙"
+            android:textColor="#E2E8F0"
+            android:textSize="16sp" />
+    </LinearLayout>
+</LinearLayout>

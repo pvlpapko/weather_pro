@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/hourlyRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_widget_initial_dark"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:baselineAligned="false"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/hourlyWidgetTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text="По часам · Федоровский"
+            android:textColor="#F8FAFC"
+            android:textSize="13sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/hourlyWidgetSettings"
+            android:layout_width="30dp"
+            android:layout_height="28dp"
+            android:layout_marginLeft="6dp"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="⚙"
+            android:textColor="#E2E8F0"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <TextView android:id="@+id/hourlyLine1" style="@style/WidgetLine" android:text="13:00  ☁  18°  💧20%" />
+    <TextView android:id="@+id/hourlyLine2" style="@style/WidgetLine" android:text="14:00  🌧  18°  💧55%" />
+    <TextView android:id="@+id/hourlyLine3" style="@style/WidgetLine" android:text="15:00  🌧  17°  💧65%" />
+    <TextView android:id="@+id/hourlyLine4" style="@style/WidgetLine" android:text="16:00  ☁  17°  💧30%" />
+    <TextView android:id="@+id/hourlyLine5" style="@style/WidgetLine" android:text="17:00  ☀  18°  💧10%" />
+    <TextView android:id="@+id/hourlyLine6" style="@style/WidgetLine" android:text="18:00  ☀  17°  💧5%" />
+    <TextView android:id="@+id/hourlyLine7" style="@style/WidgetLine" android:text="19:00  ☾  15°  💧5%" />
+    <TextView android:id="@+id/hourlyLine8" style="@style/WidgetLine" android:text="20:00  ☾  13°  💧5%" />
+</LinearLayout>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/forecastRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_widget_initial_dark"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:baselineAligned="false"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/forecastWidgetTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text="Прогноз · 3 дня"
+            android:textColor="#F8FAFC"
+            android:textSize="13sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/forecastWidgetSettings"
+            android:layout_width="30dp"
+            android:layout_height="28dp"
+            android:layout_marginLeft="6dp"
+            android:gravity="center"
+            android:includeFontPadding="false"
+            android:text="⚙"
+            android:textColor="#E2E8F0"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/forecastWidgetCity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:text="Федоровский"
+        android:textColor="#E2E8F0"
+        android:textSize="10sp" />
+
+    <TextView
+        android:id="@+id/forecastDay1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="4dp"
+        android:layout_weight="1"
+        android:ellipsize="end"
+        android:gravity="center_vertical"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:text="Пн: ☁ Дн. 18° · Ноч. 10°"
+        android:textColor="#F8FAFC"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/forecastDay2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:ellipsize="end"
+        android:gravity="center_vertical"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:text="Вт: 🌧 Дн. 19° · Ноч. 11°"
+        android:textColor="#F8FAFC"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/forecastDay3"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:ellipsize="end"
+        android:gravity="center_vertical"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:text="Ср: ☀ Дн. 21° · Ноч. 12°"
+        android:textColor="#F8FAFC"
+        android:textSize="12sp" />
+</LinearLayout>

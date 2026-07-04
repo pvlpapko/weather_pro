@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/previewForecastRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_widget_preview_real"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:baselineAligned="false"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text="Прогноз · 3 дня"
+            android:textColor="#F8FAFC"
+            android:textSize="13sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="false"
+            android:text="⚙"
+            android:textColor="#E2E8F0"
+            android:textSize="10sp" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:singleLine="true"
+        android:text="Федоровский"
+        android:textColor="#E2E8F0"
+        android:textSize="10sp" />
+
+    <TextView android:layout_width="match_parent" android:layout_height="0dp" android:layout_marginTop="4dp" android:layout_weight="1" android:ellipsize="end" android:gravity="center_vertical" android:maxLines="1" android:singleLine="true" android:text="Пн: ☁ День 18° · Ночь 10°" android:textColor="#F8FAFC" android:textSize="12sp" />
+    <TextView android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:ellipsize="end" android:gravity="center_vertical" android:maxLines="1" android:singleLine="true" android:text="Вт: ☔ День 19° · Ночь 11°" android:textColor="#F8FAFC" android:textSize="12sp" />
+    <TextView android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:ellipsize="end" android:gravity="center_vertical" android:maxLines="1" android:singleLine="true" android:text="Ср: ☀ День 21° · Ночь 12°" android:textColor="#F8FAFC" android:textSize="12sp" />
+</LinearLayout>
